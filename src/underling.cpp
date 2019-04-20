@@ -3,6 +3,10 @@
 #include <csignal>
 #include <unistd.h>
 
+#define MAJOR 0
+#define MINOR 1
+#define PATCH 0
+
 //Global variable needed for the alarm_handler
 //Necessisary since you cannot pass (custom) variables to signal handlers
 bool exec = false;
@@ -21,14 +25,30 @@ int main(int argc, char **argv) {
 	bool daemonize = false;
 	//Define usage line
 	char *usage = (char *) "Usage: %s [-d] <seconds> <command>\n";
+	//Define help line
+	char *help = (char *) "OPTIONS:\n" \
+						  "\t-d,\tDaemonize the process\n" \
+						  "\t-v,\tPrint version and exit\n" \
+						  "\t-h,\tPrint this help text and exit\n";
 
-	//Get all options available, currently only -d, if -d is defined, daemonize is true
+	//Get all options available, if -d is defined, daemonize is true
+	//If -v is defined, print version and exit
+	//If -h is defined, print help and exit
 	//else print usage to stderr and exit with failure status
-	while ((opt = getopt(argc, argv, "d")) != -1) {
+	while ((opt = getopt(argc, argv, "dvh")) != -1) {
 		switch (opt) {
 			case 'd': {
 				daemonize = true;
 				break;
+			}
+			case 'v': {
+				std::fprintf(stderr, "Underling %d.%d.%d\n", MAJOR, MINOR, PATCH);
+				std::exit(EXIT_SUCCESS);
+			}
+			case 'h': {
+				std::fprintf(stderr, usage, argv[0]);
+				std::fprintf(stderr, "%s", help);
+				std::exit(EXIT_SUCCESS);
 			}
 			default: {
 				std::fprintf(stderr, usage, argv[0]);
