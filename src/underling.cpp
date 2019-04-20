@@ -65,6 +65,7 @@ int main(int argc, char **argv) {
 
 	//Infinite loop, checks to see if exec is true
 	//If exec is true, then execute the command in argv[optind + 1]
+	//Then, break from the loop and hit the return statement
 	//Else, pause the process until a signal arrives
 	for(;;) {
 		if(exec) {
