@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.12)
+project(underling)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+add_executable(underling src/underling.cpp)
+set_property(TARGET underling PROPERTY CXX_EXTENSIONS OFF)
+set_property(TARGET underling PROPERTY CXX_STANDARD 17)
