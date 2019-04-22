@@ -87,7 +87,7 @@ int main(int argc, char **argv) {
 	//If exec is true, then execute the command in argv[optind + 1]
 	//Then, break from the loop and hit the return statement
 	//Else, pause the process until a signal arrives
-	for(;;) {
+	while(true) {
 		if(exec) {
 			std::system(argv[optind + 1]);
 			break;
