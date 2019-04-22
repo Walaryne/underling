@@ -8,7 +8,7 @@
 #define PATCH 0
 
 //Global variable needed for the alarm_handler
-//Necessisary since you cannot pass (custom) variables to signal handlers
+//Necessary since you cannot pass (custom) variables to signal handlers
 bool exec = false;
 
 //Sets exec to true upon receiving SIGALRM
@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
 						  "\t-v,\tPrint version and exit\n" \
 						  "\t-h,\tPrint this help text and exit\n";
 
-	//Get all options available, if -d is defined, daemonize is true
+	//Get all options available; if -d is defined, daemonize is true
 	//If -v is defined, print version and exit
 	//If -h is defined, print help and exit
 	//else print usage to stderr and exit with failure status
@@ -87,7 +87,7 @@ int main(int argc, char **argv) {
 	//If exec is true, then execute the command in argv[optind + 1]
 	//Then, break from the loop and hit the return statement
 	//Else, pause the process until a signal arrives
-	for(;;) {
+	while(true) {
 		if(exec) {
 			std::system(argv[optind + 1]);
 			break;
