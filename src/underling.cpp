@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 	//Define "daemonize" variable
 	bool daemonize = false;
 	//Define usage line
-	char *usage = (char *) "Usage: %s [-d] <seconds> <command>\n";
+	char *usage = (char *) "Usage: %s [-dvh] <seconds> <command>\n";
 	//Define help line
 	char *help = (char *) "OPTIONS:\n" \
 						  "\t-d,\tDaemonize the process\n" \
