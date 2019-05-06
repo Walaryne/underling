@@ -32,7 +32,8 @@ int main(int argc, char **argv) {
 						"\t-d,\tDaemonize the process\n"\
 						"\t-v,\tPrint version and exit\n"\
 						"\t-h,\tPrint this help text and exit\n"\
-						"\t-t,\tDump the time in seconds till execution\n"\
+						"\t-t,\tDump the time in seconds till execution\n\n"\
+						"\tX refers to an integer in the form of 0 or 0.0\n"\
 						"\t-Y,\tAdd X years to execution time\n"\
 						"\t-M,\tAdd X months to execution time\n"\
 						"\t-D,\tAdd X days to execution time\n"\

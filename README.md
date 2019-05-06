@@ -13,7 +13,7 @@ Daemonize simply means it will run unattended, free of the calling shell.
 (You can close the prompt after the command is run, for instance.)
 
 Options for time duration are -Y (Years), -M (Months, 30 days), -D (Days), -H (Hours), -m (Minutes), -S (Seconds).
-At least one of these options must be specified with a number in order for execution to occur.
+At least one of these options must be specified with a number in order for execution to occur. A number must be affixed with these options after a space. The number may be in the form of 0 or 0.0.
 
 Usage is as follows:
 `underling [-dhvtYMDHmS] <command>`
