@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <csignal>
-#include <chrono>
 #include <unistd.h>
 
 #define MAJOR 1
