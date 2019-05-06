@@ -4,8 +4,8 @@
 #include <chrono>
 #include <unistd.h>
 
-#define MAJOR 0
-#define MINOR 2
+#define MAJOR 1
+#define MINOR 1
 #define PATCH 0
 
 //Global variable needed for the alarm_handler
