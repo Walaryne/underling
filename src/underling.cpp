@@ -5,7 +5,7 @@
 
 #define MAJOR 1
 #define MINOR 1
-#define PATCH 0
+#define PATCH 1
 
 //Global variable needed for the alarm_handler
 //Necessary since you cannot pass (custom) variables to signal handlers
@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
 	//If -h is defined, print help and exit
 	//If -YMDHm or S are defined, update the time to reflect Years, Months, Days, Hours, Minutes, or Seconds respectively
 	//else print usage to stderr and exit with failure status
-	while ((opt = getopt(argc, argv, "dvhtY:M:D:H:m:S")) != -1) {
+	while ((opt = getopt(argc, argv, "dvhtY:M:D:H:m:S:")) != -1) {
 		switch (opt) {
 			case 'd': {
 				daemonize = true;
@@ -86,7 +86,7 @@ int main(int argc, char **argv) {
 				break;
 			}
 			case 'S': {
-				time += (std::stod(optarg));
+				time += std::stod(optarg);
 				break;
 			}
 			default: {
